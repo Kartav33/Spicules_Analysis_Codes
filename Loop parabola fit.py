@@ -26,6 +26,11 @@ colors_list = [(i / 255.0, i / 255.0, i / 255.0) for i in range(256)]
 values_list = [i for i in range(256)]
 colors = ListedColormap(colors_list)
 
+# Define the reversed grayscale color scheme
+colors_list = [(i / 255.0, i / 255.0, i / 255.0) for i in range(255, -1, -1)]
+values_list = [i for i in range(255, -1, -1)]
+colors_2 = ListedColormap(colors_list)
+
 # Define the parabolic function
 def parabola(y, a, b, c):
     return -a * y ** 2 + b * y + c
@@ -37,7 +42,8 @@ while True:
     slice_data = np_array[:, :, id]
     image = ax.imshow(
         slice_data,
-        cmap=colors,
+        #cmap=colors,
+        cmap=colors_2,
         vmin=0,
         vmax=2,
         extent=[
@@ -91,8 +97,10 @@ while True:
     fig.canvas.draw()
 
     # Show the plot
-    plt.xlabel("Height")
-    plt.ylabel("Time")
+    plt.xlabel("Height (in Mm)", fontsize=15)
+    plt.ylabel("Time (in min)", fontsize=15)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
     plt.show()
 
     # Prompt the user to fit another parabola

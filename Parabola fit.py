@@ -28,9 +28,26 @@ colors_list = [(i / 255.0, i / 255.0, i / 255.0) for i in range(256)]
 values_list = [i for i in range(256)]
 colors = ListedColormap(colors_list)
 
+# Define the reversed grayscale color scheme
+colors_list = [(i / 255.0, i / 255.0, i / 255.0) for i in range(255, -1, -1)]
+values_list = [i for i in range(255, -1, -1)]
+colors_2 = ListedColormap(colors_list)
+
 # Create a figure and plot the slice data with the customized color scheme
 fig, ax = plt.subplots()
-image = ax.imshow(slice_data, cmap=colors, vmin=0, vmax=2, extent=[Origin[1], Origin[1] + Spacing[1]*(dims[1]-1), Origin[2], Origin[2] + Spacing[2]*(dims[2]-1)]) 
+image = ax.imshow(
+        slice_data,
+        #cmap=colors,
+        cmap=colors_2,
+        vmin=0,
+        vmax=2,
+        extent=[
+            Origin[1],
+            Origin[1] + Spacing[1] * (dims[1] - 1),
+            Origin[2],
+            Origin[2] + Spacing[2] * (dims[2] - 1),
+        ],
+    )
 
 # Define the parabolic function
 def parabola(y, a, b, c):
@@ -74,6 +91,8 @@ def fit_parabola():
 fit_parabola()
 
 # Show the plot
-plt.xlabel('Height')
-plt.ylabel('time')
+plt.xlabel("Height (in Mm)", fontsize=15)
+plt.ylabel("Time (in min)", fontsize=15)
+plt.xticks(fontsize=12)
+plt.yticks(fontsize=12)
 plt.show()

@@ -1,4 +1,4 @@
-# This repository contains all the codes necessary for the handling and producing the required results as per our article.
+This repository contains all the codes necessary for the handling and producing the required results as per our article.
 # We suggest the user to kindly use 16 GB RAM SSD System to run these codes as it might crash the reular 8 GB SSD or HDD systems due to the grid size of our data.
 # We also recommend the use of Paraview software in parallel to the program to ensure the uniformity of the run.
 # We recommend the use of VS code interpreter for our repo. 

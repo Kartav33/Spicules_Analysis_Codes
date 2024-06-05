@@ -10,9 +10,9 @@ iv. Using the command below, one can load all the codes into their system.
 v. Excel/CSV files have been included in the repository while the .vtk files are available on demand.
 
 vi. To clone the repository, run this code on the terminal: 
-'''
-git clone https://github.com/Kartav33/Spicules_Analysis_Codes 
-'''
+
+``git clone https://github.com/Kartav33/Spicules_Analysis_Codes ``
+
 
 ## Load the data as well in your offline folder to ensure proper paths in accordance with the code.
 
